@@ -1,0 +1,7 @@
+This guide shows how to run the bdd test
+
+*You can simply right click on the "Search.feature" file under the project's collection found in a package named "Features".
+
+*Wait until the test is finished
+
+*Observe the test results from the console
