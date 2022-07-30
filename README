@@ -1,0 +1,11 @@
+This guide shows how to run the API test and how to examine the test reports:
+
+*You can simply right click on the "Regression.xml" file under the project's collection and then click Run.
+
+*Wait until the test is finished
+
+*Observe the test results from the console
+
+*You can have detailed test results in the generated reports found in "TestReport" package
+
+*Open the test report by double clicking on ut and from the right hand side of the screen click on your preferred operator to open the file in.

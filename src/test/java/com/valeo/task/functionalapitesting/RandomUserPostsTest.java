@@ -1,4 +1,4 @@
-package RestAssured.FunctionalAPITesting;
+package com.valeo.task.functionalapitesting;
 
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.response.ValidatableResponse;
@@ -19,6 +19,7 @@ public class RandomUserPostsTest {
     @BeforeSuite
     public void generateRandomUserId () {
 
+        //Picking a random number from the interval [1-10]
         randomId = (int) Math.floor(Math.random() * (10) + 1);
         System.out.println("The random user's Id is " + randomId);
         reqBuilder = new RequestSpecBuilder();
@@ -29,7 +30,7 @@ public class RandomUserPostsTest {
     }
 
     @Test(priority = 1)
-    public void GetRandomUserAndExtractHisEmail() {
+    public void getRandomUserAndExtractHisEmail() {
 
         UserEmail = given().
                 spec(requestSpec).
@@ -45,7 +46,7 @@ public class RandomUserPostsTest {
     }
 
     @Test(priority = 2)
-    public void GetUserPostsAndVerifyIds() {
+    public void getUserPostsAndVerifyIds() {
 
         UserPosts = given().
                 spec(requestSpec).
@@ -55,6 +56,7 @@ public class RandomUserPostsTest {
 
                 then().
                 statusCode(200).
+                //Assert that the found posts' IDs are in the interval[1-100]
                 assertThat().body("id", greaterThanOrEqualTo(1)).
                 assertThat().body("id", lessThanOrEqualTo(100)).
 

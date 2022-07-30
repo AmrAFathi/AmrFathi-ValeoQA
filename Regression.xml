@@ -1,0 +1,12 @@
+<suite name="Regression-Suite" parallel="classes"  >
+    <listeners>
+        <listener class-name="com.valeo.task.utilities.TestListener"/>
+    </listeners>
+    <test name="Full-Testing_Cycle"  parallel="classes" group-by-instances="true">
+        <classes thread-count="20">
+
+            <class name="com.valeo.task.functionalapitesting.RandomUserPostsTest" />
+
+        </classes>
+    </test>
+</suite>
